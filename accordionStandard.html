@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>standard accordion</title>
+    <style>
+        h2 {
+              margin: 20px auto 80px;
+              font-size: 38px;
+              font-weight: 300;
+              text-align: center;
+              letter-spacing: 2px;
+              line-height: 1.5;
+            }
+
+        .accordion {
+          width: 75%;
+          min-height: 5px;
+          max-width: 700px;
+          padding: 45px 70px 45px 45px;
+          margin: 0 auto;
+          position: relative;
+          font-size: 22px;
+          border: 1px solid rgba(0,0,0,.1);
+          border-radius: 15px;
+          box-sizing: border-box;
+          transition: all .3s;
+          margin-top: 20px;
+          background-color: rgba(0,0,0,.1)
+        }
+        .accordion h1, .accordion h2, .accordion h3, .accordion h4, .accordion h5, .accordion h5 {
+            cursor: pointer;
+        }
+        .accordion.active {
+          min-height: 50px;
+          background-color: #f6f7f8;
+          box-shadow: 2px 2px 20px rgba(0,0,0,.2);
+        }
+        .accordionContent {
+          color: #96999d;
+          align-items: center;
+          font-weight: 500;
+            display: none;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $('.accordion').click(function(){
+                $(this).toggleClass('active');
+                $(this).children('div').stop().fadeToggle();
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <h2>Frequently Asked Questions</h2>
+<div class="accordion">
+  <h1>
+    header goes here, can be any header tag
+  </h1>
+  <div class="accordionContent">
+      <p>Content goes here</p>
+  </div>
+</div>
+
+<div class="accordion">
+
+  <h5>
+    header goes here, can be any header tag
+  </h5>
+  <div class="accordionContent">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam officiis, magni iure quasi? Suscipit at, aliquid repellendus unde cumque possimus, molestiae totam excepturi. Neque quae, vero rem beatae soluta debitis.</p>
+  </div>
+</div>
+
+<div class="accordion">
+  <h3>
+    header goes here, can be any header tag    
+  </h3>
+  <div class="accordionContent">
+      <p>any content you want</p>
+  </div>
+</div>
+</body>
+</html>
